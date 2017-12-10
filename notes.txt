@@ -15,9 +15,9 @@ npm install eslint --save-dev
 
 Docs npmjs
 https://docs.npmjs.com/cli/init
-npm adduser 
+npm adduser
 
-Pacote do gitignore 
+Pacote do gitignore
 https://www.npmjs.com/package/gitignore
 
 Ajudar a criar readme do github
@@ -37,3 +37,13 @@ https://github.com/rwaldron/idiomatic.js/
 
 ESLint
 eslint.org
+
+EditorConfig manter um padrao para todos os editores de texto.
+
+Husky - Git hooks made easy.
+Quando for executar por exemplo um commit, um push e etc vc
+ pode solicitar para que seja realiazado algo antes.
+
+npm install husky --save-dev
+
+
