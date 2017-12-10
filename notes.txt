@@ -46,4 +46,7 @@ Quando for executar por exemplo um commit, um push e etc vc
 
 npm install husky --save-dev
 
-
+https://nipher.io
+https://ponyfoo.com
+https://kangax.github.io/compat-table/es6/
+http://es6-features.org
