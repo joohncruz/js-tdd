@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Default Parameters</title>
+</head>
+<body>
+
+  <script>
+    function helloOld (name, surname) {
+      name = name || 'Jonathan';
+      surname = surname || 'Cruz Rocha Ferreira';
+
+      console.log(`Hello ${name} ${surname}! How are you?`);
+    }
+
+    function hello (name = 'Jonathan', surname = 'Cruz Rocha') {
+      console.log(`Hello ${name} ${surname}! How are you?`);
+    }
+
+    hello();
+
+    hello('Shun');
+
+  </script>
+
+</body>
+</html>

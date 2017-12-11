@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Array find and findIndex</title>
+</head>
+<body>
+
+  <script>
+
+    const data = [
+      {
+        name: 'Jonathan',
+        age: 22,
+        city: 'Dublin'
+      },
+      {
+        name: 'Luiz',
+        age: 23,
+        city: 'Cologne'
+      }
+    ];
+
+    const simpleArray = [4, -5, 0, -1];
+
+    const underZero = simpleArray.find(x => x < 0);
+    console.log(underZero);
+
+    const underZeroIndex = simpleArray.findIndex(x => x < 0);
+    console.log(underZeroIndex)
+
+    const shun = data.find(person => person.name === 'Jonathan');
+    console.log(shun);
+
+  </script>
+
+</body>
+</html>
