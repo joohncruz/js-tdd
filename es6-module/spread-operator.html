@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Spread Operator Intro</title>
+</head>
+<body>
+
+  <script>
+
+    let front = ['vuejs', 'react', 'angular'];
+    let back = ['python', 'ruby', 'nodejs'];
+
+    console.log([...'will']);
+    console.log(...front);
+
+    let fullStack = [...front, 'RxJs', ...back];
+
+    console.log(fullStack);
+
+    /* Dentro de Função */
+
+    function makeSanwich(bread, cheese, sauce) {
+      console.log(`Your sandwich with ${bread} bread, ${cheese} chesse and ${sauce} is done!`);
+    }
+
+    const ingredients = ['white', 'cheddar', 'barbecue'];
+
+    makeSanwich(...ingredients);
+
+  </script>
+
+</body>
+</html>
