@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Destructuring Objects</title>
+</head>
+<body>
+
+  <script>
+
+    let data = {
+      name: 'Jonathan',
+      surname: 'Cruz',
+      age: 22,
+      blog: 'http://joohncruz.com.br',
+      social: {
+        twitter: '@joohncruz',
+        facebook: '/jonathan.cruzrocha.1'
+      }
+    }
+
+    const {name, surname} = data;
+    const {twitter} = data.social;
+    const {facebook: fb} = data.social;
+
+    console.log(name);
+    console.log(surname);
+    console.log(twitter);
+    console.log(fb);
+
+    const { city = 'Dublin'} = data;
+
+    console.log(city);
+
+  </script>
+
+</body>
+</html>
