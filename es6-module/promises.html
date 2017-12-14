@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Promise Intro</title>
+</head>
+<body>
+
+  <script>
+
+    let defer = new Promise((resolve, reject) => {
+      setTimeout(() => {
+
+        if(true) {
+          resolve('Hello! It works!');
+        } else {
+          reject('Error!');
+        }
+
+      }, 2000)
+
+    });
+
+    defer
+      .then((data) => { 
+        console.log(data);
+        return 'foo';
+      })
+      .then((data) => console.log(data))
+      .catch((err) => console.log(err));
+
+  </script>
+
+</body>
+</html>

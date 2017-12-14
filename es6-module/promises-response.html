@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Promises Example</title>
+</head>
+<body>
+
+  <script>
+
+    var posts = fetch('https://willianjusten.com.br/search.json');
+
+    // pending
+    // resolved
+    // reject
+
+    console.log(posts)
+
+    posts
+      .then(data => data.json())
+      .then(data => {
+        throw new Error('ixi deu erro')
+      } )
+      .catch(err => console.error(err));
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Promises Multiplas</title>
+</head>
+<body>
+
+  <script>
+
+    const currency = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve({ currency: 'euro', value: 3.50 });
+      }, 2000);
+    });
+
+    const countries = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(['Ireland', 'England', 'Scotland']);
+      }, 600);
+    });
+
+    // Requisição onde espera todas as promises resolverem para resolve-las.
+    Promise
+      .all([currency, countries])
+      .then(responses => {
+        let [ curr, coun ] = responses;
+        console.log(responses);
+        console.log(curr);
+        console.log(coun);
+      })
+
+      // Requisição a varios lugares mas a primeira que voltar importa.
+      Promise
+        .race([currency, countries])
+        .then(responses => {
+          console.log(responses);
+      })
+
+
+  </script>
+
+</body>
+</html>
