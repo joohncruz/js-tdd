@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Array Of</title>
+</head>
+<body>
+
+  <script>
+
+    let foo = Symbol('name');
+
+    console.log(foo);
+
+    let obj = {
+      [Symbol(name)]: 'Jonathan',
+      [Symbol(age)]: 26,
+      city: 'Belo Horizonte'
+    }
+
+    const symbols = Object.getOwnPropertySymbols(obj)
+
+    const data = symbols.map(sym => obj[sym]);
+
+    console.log(data);
+
+  </script>
+
+</body>
+</html>
