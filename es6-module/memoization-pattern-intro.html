@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Memoization Pattern</title>
+</head>
+<body>
+
+  <script>
+
+    // const factorial = n => {
+    //   if ( n <= 1) return 1
+    //   return n * factorial(--n)
+    // }
+
+    // console.log(factorial(3)) // 6
+    // console.log(factorial(5)) // 120
+
+    // Recebe uma função como parâmetro
+    const memoizer = fn => {
+
+      const cache = new Map();
+
+      // Retorna uma função que recebe 
+      // Um número indefinido de parâmetros
+      // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Functions/rest_parameters
+      return (...args) => {
+         // Serializa o array args
+         const key = JSON.stringify(args);
+
+         // Verifica se a chave existe
+         if( cache.has(key) ) {
+            console.log(`Buscou no cache ${args}`);
+            
+            // Retorna o valor do cache
+            return cache.get(key);
+
+         } else {
+          console.log(`Não encontrou no cache ${args}. Adicionando ao cache.`);
+
+          // Invoca a função fn com os parâmetros
+          // Utilizando o spread operator
+          const result = fn(...args);
+
+          // Guarda o resultado no cache
+          cache.set(key, result);
+
+          // Retorna o valor que acabou de ser calculado
+          return result;
+
+         }
+      };
+    };
+
+    // Função memoizer omitida
+    const sumTwoNumbers = (num1, num2) => num1 + num2;
+
+    console.log(sumTwoNumbers(5,5))
+    console.log(sumTwoNumbers(3,5))
+    // Repetiu a operação!
+    console.log(sumTwoNumbers(5,5))
+
+    // Turbina a função sumTwoNumbers
+    const memoizedSumTwoNumbers = memoizer(sumTwoNumbers);
+
+    console.log(memoizedSumTwoNumbers(5,5));
+    console.log(memoizedSumTwoNumbers(7,2));
+    console.log(memoizedSumTwoNumbers(3,3));
+
+    // A combinação de parâmetros já foi usada antes
+    console.log(memoizedSumTwoNumbers(5,5)); // busca do cache
+
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Memoization Pattern Product Example</title>
+</head>
+<body>
+
+  <script>
+
+    const memoizer = fn => {
+
+      const cache = new Map();
+
+      return (...args) => {
+         const key = JSON.stringify(args);
+
+         if( cache.has(key) ) {
+            console.log(`Buscou no cache ${args}`);
+            
+            return cache.get(key);
+
+         } else {
+          console.log(`Não encontrou no cache ${args}. Adicionando ao cache.`);
+
+          const result = fn(...args);
+
+          cache.set(key, result);
+
+          return result;
+
+        }
+      };
+    };
+
+    // recebe um objeto e um array
+    const getDiscount = (product, discounts) => discounts.get(product.id);
+
+      // descontos de um produto
+    const discounts = new Map();
+    discounts.set(1, 5);
+    discounts.set(2, 10);
+    discounts.set(3, 5);
+
+    // turbinou a função getDiscount
+    const memoizedGetDiscount = memoizer(getDiscount);
+
+    const result1 = memoizedGetDiscount(
+        { id: 1, name: 'Cangaceiro JavaScript'}, 
+        discounts
+    );
+    console.log(result1);
+
+    // buscou do cache
+    const result2 = memoizedGetDiscount(
+        { id: 1, name: 'Cangaceiro JavaScript'}, 
+        discounts
+    );
+    console.log(result2);
+
+
+  </script>
+
+</body>
+</html>

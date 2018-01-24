@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Memoization Pattern Product Example</title>
+</head>
+<body>
+
+  <script>
+
+    const memoizer = fn => {
+
+      const cache = new Map();
+
+      return (...args) => {
+         const key = JSON.stringify(args);
+
+         if( cache.has(key) ) {
+            console.log(`Buscou no cache ${args}`);
+            
+            return cache.get(key);
+
+         } else {
+          console.log(`Não encontrou no cache ${args}. Adicionando ao cache.`);
+
+          const result = fn(...args);
+
+          cache.set(key, result);
+
+          return result;
+
+        }
+      }
+    }
+
+    // const factorial = n => {
+    //     if(n <= 1) return 1
+    //     return n * factorial(--n);
+    // };
+
+    // const memoizedFactorial = memoizer(factorial);
+
+    // console.log(memoizedFactorial(5));
+    // console.log(memoizedFactorial(3));
+    // console.log(memoizedFactorial(4));
+
+
+    // recebe um objeto e um array
+    const factorial = memoizer(
+      n => {
+        if (n <= 1) return 1;
+        return n * factorial(--n);
+      }
+    );
+    console.log(factorial(5));
+    console.log(factorial(3));
+    console.log(factorial(4));
+
+  // turbinou a função getDiscount
+
+  </script>
+
+</body>
+</html>

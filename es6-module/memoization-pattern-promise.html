@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Memoization Pattern Product Example</title>
+</head>
+<body>
+
+  <script>
+
+    const memoizer = fn => {
+
+      const cache = new Map();
+
+      const newFn = (...args) => {
+        const key = JSON.stringify(args);
+
+        if( cache.has(key) ) {
+          console.log(`Buscou no cache ${args}`);
+            
+          return cache.get(key);
+
+        } else {
+          console.log(`Não encontrou no cache ${args}. Adicionando ao cache.`);
+
+          const result = fn(...args);
+
+          cache.set(key, result);
+
+          return result;
+
+        }
+      };
+
+      newFn.clearCache = () => cache.clear();
+      return newFn;
+    }
+
+    // handler da resposta
+    const fetchHandler = res => {
+      res.ok ? res.json() : Promise.reject(res.statusText)
+    }
+
+    // retorna uma Promise
+    const getGitHubUserFromUsername = username =>
+      fetch(`https://api.github.com/users/${username}`)
+      .then(fetchHandler);
+
+    getGitHubUserFromUsername('joohncruz') // busca da API
+      .then(console.log)
+      .then(getGitHubUserFromUsername(1)) // busca da API
+      .then(console.log)
+      .catch(console.log);
+
+
+    const memoizedGetGitHubUserFromUsername = memoizer(getGitHubUserFromUsername);
+
+    // memoizedGetGitHubUserFromUsername('joohncruz') // buisca da API
+    //   .then(console.log)
+    //   .then(memoizedGetGitHubUserFromUsername('joohncruz')) // busca do cache!
+    //   .then(console.log)
+    //   .catch(console.log)
+    
+    memoizedGetGitHubUserFromUsername('joohncruz')  // busca da API
+    .then(console.log) 
+    .then(memoizedGetGitHubUserFromUsername.clearCache()) // apagou o cache
+    .then(memoizedGetGitHubUserFromUsername('joohncruz')) // busca do API!
+    .then(console.log)
+    .catch(console.log);
+
+  </script>
+
+</body>
+</html>
