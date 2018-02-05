@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Weakset Intro</title>
+</head>
+<body>
+
+  <script>
+
+    let obj1 = {
+      name: 'Jonathan',
+      age: 22
+    }
+
+    let obj2 = {
+      name: 'Stella',
+      age: 22
+    }
+
+    let ws = new WeakSet([obj1, obj2])
+
+    ws.has(obj1)
+
+    ws.add({name: 'Bruno', age: 18})
+
+    ws.delete(obj2)
+
+  </script>
+
+</body>
+</html>

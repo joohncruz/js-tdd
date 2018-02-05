@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Sets Intro</title>
+</head>
+<body>
+
+  <script>
+
+    let mySet = new Set(['jonathan', 'stella', 'bruno'])
+
+    mySet.add('marcio')
+
+    console.log(mySet.size)
+
+    mySet.delete('willian')
+
+    console.log(mySet.has('willian'))
+    console.log(mySet.has('marcio'))
+
+    // no set se busca pelo valor e nao pelo indice, não é baseado em indice 
+
+    let it = mySet.values()
+
+    console.log(it.next())
+
+    for ( name of it ) {
+      console.log(name)
+    }
+
+    
+  </script>
+
+</body>
+</html>

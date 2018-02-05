@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Maps Intro</title>
+</head>
+<body>
+
+  <script>
+
+    let m = new Map();
+
+    m.set('willian', 26)
+    m.set('jonathan', 22)
+
+    m.size
+
+    m.delete('willian')
+
+    m.has('jonathan')
+
+    const it = m.values();
+
+    it.next
+
+    for (value of it) {
+      console.log(value)
+    }
+  </script>
+
+</body>
+</html>
