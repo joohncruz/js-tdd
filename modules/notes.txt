@@ -1,0 +1,7 @@
+FreeCodeCamp - JavaScript Modules: A Beginner's Guide
+https://medium.freecodecamp.org/javascript-modules-a-beginner-s-guide-783f7d7a5fcc
+
+Uma manutenção melhor pelo codigo ser "isolado", mais facil de encontrar, namespace, reutilização de codigos.
+
+
+Learning JavaScript Design Patterns by Addy Osmani: a treasure trove of details in an impressively succinct read
