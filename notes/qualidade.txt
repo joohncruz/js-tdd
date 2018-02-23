@@ -1,0 +1,43 @@
+Qualidade pode ser algo subjetivo, separando o ponto de vista analisado conseguimos definir qualidade.
+
+Visão do Cliente: Bonito, Tudo Funcionando, Barato
+Visão do Chefe: Não demora muito, Gera lucros, Cliente Feliz
+Visão do Desenvolvedor: Um codigo que voce consegue olhar e consegue entender oque está acontecendo, caso nao consiga a qualidade do codigo não está muito boa.
+
+Qualidade de Softaware por MCCAL
+
+Operação: 
+	Confiabilidade (é preciso?)	
+	Operação (corretitude - faz oque foi pedido?)
+	Eficiencia (tem boa performance?)
+	Integridade (oferece segurança?)
+	Usabilidade (facil de usar?)
+	Adaptabilidade (se adapta as necessidades do usuario?)
+	
+	
+Transição:
+	Portabilidade (consigo mover facilmente?)
+	Reusabilidade (posso utilizar parte dele?)
+	Interoperabilidade (trabalha com outros softwares em conjunto?)
+	
+Revisão: 
+	Manutenbilidade (facil de corrigir?)
+	Flexibilidade (facil de mudar?)
+	Testabilidade (posso testar o seu funcionamento?)
+
+
+
+Como atingir esses fatores no DESENVOLVIMENTO?
+
+ - Bom senso, pensar antes de criar, se faz um sentido.
+ 	- Exemplo variveis: nome de variavel, Nomes faceis de escrever e ler, use substantivos para classes e objetos, use verbos para metodos. 
+	- Exemplo metodos: devem ser pequenos, possuir uma unica responsabilidade, permitir reuso, facilmente testaveis. 
+
+- Nao comenta o codigo ruim, reescreva. 
+- Deixe a area de acampamento mais limpa do que encontrou.
+- Tenha carinho no inicio ou conviva com os debitos tecnicos. 
+- Faça testes. 
+
+	
+
+ 
