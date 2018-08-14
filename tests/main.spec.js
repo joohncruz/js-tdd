@@ -7,6 +7,8 @@ describe('Main', () => {
         // espera retornar (4) => true | (3) => false => broken test
       });
     });
+    // context.only executa apenas este context
+    // context.skip pula o teste
     context('Case 2', () => {
 
     });

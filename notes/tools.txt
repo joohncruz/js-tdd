@@ -8,9 +8,12 @@ Sinon.js - sinonjs.org
 
 Mocha:
   npm test -- --reporters
+  npm test -- --bail // Parar no primeiro teste. (fast fail)
+
 
 ALL:
 command line: npm install --save-dev mocha chai
 
 ./package.json
   "test": "./node_modules/mocha/bin/mocha tests/**/*.spec.js"
+  "test:reporter": "./node_modules/mocha/bin/mocha tests/**/*.spec.js '--reporter=progress'"
