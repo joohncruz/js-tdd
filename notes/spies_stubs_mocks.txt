@@ -1,0 +1,48 @@
+Spies
+
+  Spies são usados para vigiar informações sobre chamadas de funções (métodos).
+  Um spy vbai nos dizer se o método foi chamado, quantas vezes, quais argumentos
+  foram passados, etc.
+
+  Quando devemos usar?
+
+    São muito uteis para testar callbacks e como metodos sao usados
+    dentro do sistema. Os spies te permitem verificar se um outro método foi
+    chamado dentro do método que você está testando.
+
+    it("should inspect jQuery.getJSON's usage of jQuery.ajax", () => {
+      sinon.spy(jQuery, "ajax");
+
+      jQuery.getJSON("/some/resource");
+      assert(jQuery.ajax.calledOnce);
+    });
+
+Stubs
+  Stubs são como os spies, exceto por eles substituirem a função alvo. Podendo
+  inclusive mudar o comportamento, assim como os valores e exceções levantadas.
+
+  Quando usar stubs?
+    - Controlar comportamento de um teste. EX.: foçar uma exceção
+    - "Pular" uma parte não necessária do código. EX.: execução de db
+    - Simplificar o teste de código assincrono
+
+
+Mocks
+  Mocks são metodos falsos (similares aos spies) com comportamento
+  pré-programado (similar ao stub) e respostas/expections pré-programados.
+
+  Quando usar mocks?
+    - Mocks devem ser primeiramente utilizados quando você precisa de um stub,
+    mas precisa verificar múltiplos comportamentos num específico ponto.
+
+    it("should pass object with correct values to save only once", () => {
+      var info = { name: 'test' };
+      var expectedUser = {  nameLowercase: info.name.toLowerCas() };
+
+      var database = sinon.mock(Database);
+      database.expects('save').once().withArgs(expectedUser);
+
+      setupNrewUser(info, function() {});
+      database.verify();
+      database.restore();
+    })

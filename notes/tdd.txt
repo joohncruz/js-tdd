@@ -1,0 +1,29 @@
+Como funciona o TDD ?
+
+  - 3 pequenas etapas: Escreva o teste, Faça o teste passar e refatora.
+    - Criar o teste (oque este metodo precisa fazer?)
+    - Fazer o caso de teste passar da forma mais minimalista possivel.
+    - Refatorar o codigo com novos casos de testes.
+
+    Fluxo do teste
+      - Escrever o teste
+      - Escrever o código para o teste passar
+      - Escrever um segundo caso de teste
+      - Corrigir o código para que passe
+      - Escrever um terceiro caso de teste (se necessário)
+      - Refatorar o código
+
+    Pensamento como testar
+      - O que o código precisa fazer?
+      - Que dados ele recebe?
+      - Que dados ele precisa retornar?
+      - Que ações precisam acontecer para o código rodar?
+
+Padrao do teste
+  "Ele deve fazer isso quando aquilo"
+  "It should do that when this"
+
+  it('should return 4 when receive 2,2') {
+    expect(sum(2,2)).to.equal(4);
+  };
+

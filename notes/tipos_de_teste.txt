@@ -1,0 +1,41 @@
+Tipos de teste
+
+
+  Piramede definida por martin flower.
+
+  1- UI
+  2- Service
+  3- Unit
+
+Na area de service é realizados mock, nao devemos testar a api,
+e sim como o metodo deve funcionar com o retorno.
+
+Teste de ui, é utilizado com phantomjs, selenium e etc, mais utilizado para ver
+se o botão nao esta sendo clicado na tela, ou omitido e etc. Tambem tem os
+testes de regressao utilizado para manter alguma funcionalidade apos alguma
+alteração.
+
+  1- UI (Poucos testes) Bastante lento
+  2- Service (Médio testes) Mediano
+  3- Unit (Muito testes) Muito rápido
+
+Teste Unitario
+  - É simples e pequeno teste automatizado que prova o comportamento de um único
+  método.
+    - Evite ruído entre os testes (isolamento), todos os testes devem ser
+    completamente isolados.
+    - Escolha os melhores asserts para cada momento.
+    - Procure usar Mocks para chamadas externas. (mock seria criar um resposta
+    "falsa" para a requisição).
+    - Utilize dele para organizar o design de seu código.
+
+Teste de Integração
+  - É um teste para validar se os componentes estão funcionando em conjunto.
+    - Cuidado para nao criar um teste inútil.
+    - Isole o máximo possivel dos ambientes, evitando falso positivos
+
+Teste de Aceitação (E2E)
+  - O teste de aceitação é realizado com o prósito de avaliar a qualidade externa do produto e,
+  na medida do possíbém, a qualidade em uso.
+    - Valide apenas o fluxo de funcionamento do projeto.
+
