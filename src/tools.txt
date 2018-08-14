@@ -1,6 +1,0 @@
-Mocha - mochajs.org
-Chai Asserion Library - chaijs.com
-
-Instabul coverage - instalbuljs
-
-Sinon.js - sinonjs.org

@@ -1,0 +1,16 @@
+Mocha - mochajs.org
+Chai Asserion Library - chaijs.com
+
+Instabul coverage - instalbuljs
+
+Sinon.js - sinonjs.org
+
+
+Mocha:
+  npm test -- --reporters
+
+ALL:
+command line: npm install --save-dev mocha chai
+
+./package.json
+  "test": "./node_modules/mocha/bin/mocha tests/**/*.spec.js"
