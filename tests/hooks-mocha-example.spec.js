@@ -3,12 +3,14 @@ describe('Hooks Mocha Example', () => {
 
   // Executar antes de cada bloco, executa uma vez.
   before(() => {
-
+    // inicia uma conexao no banco
+    // criar um conjunto de dados
   });
 
   // roda uma vez, depois do bloco
   after(() => {
-
+    // fecha uma conexao do banco
+    // apagar esse conjunto de dados
   });
 
   // executa todas as vezes, depois de cada bloco
