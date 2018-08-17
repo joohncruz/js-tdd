@@ -7,6 +7,7 @@
     "lint": "./node_modules/.bin/eslint src/*.js",
     "prepush": "npm run lint",
     "test": "./node_modules/mocha/bin/mocha tests/**/*.spec.js",
+    "test:tdd": "./node_modules/mocha/bin/mocha tests/**/*.spec.js --watch",
     "test:reporter": "./node_modules/mocha/bin/mocha tests/**/*.spec.js '--reporter=progress'"
   },
   "repository": {
