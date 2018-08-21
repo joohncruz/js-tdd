@@ -52,5 +52,13 @@ https://kangax.github.io/compat-table/es6/
 http://es6-features.org
 
 Coverage:
-
 npm install --save-dev nyc
+
+
+Babel:
+npm install --save-dev babel-preset-env babel-register
+
+.babelrc
+{
+  presets: ['env'];
+}
