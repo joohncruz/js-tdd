@@ -50,3 +50,13 @@ https://nipher.io
 https://ponyfoo.com
 https://kangax.github.io/compat-table/es6/
 http://es6-features.org
+
+
+Babel:
+
+npm install --save-dev babel-preset-env babel-register
+
+.babelrc
+{
+  presets: ['env'];
+}
